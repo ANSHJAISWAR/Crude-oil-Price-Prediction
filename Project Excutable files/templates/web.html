@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crude Oil Prediction</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            background-size: cover; /* Ensures the background image covers the entire viewport */
+            background-repeat: no-repeat; /* Prevents the background from repeating */
+            background-attachment: fixed; /* Keeps the background fixed when scrolling */
+        }
+        .gradient-button {
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center h-screen"
+      style="background-image: url('{{ url_for('static', filename='images/xyz.jpg') }}');">
+
+    <!-- Main Container -->
+    <div class="text-center text-white">
+        <h1 class="text-4xl font-bold mb-8">Crude Oil Prediction</h1>
+
+        <!-- Prediction Form -->
+        <form action="{{ url_for('login') }}" method="POST">
+            <input type="text" name="year" placeholder="Enter the crude oil prices for the first 10 days"
+                   class="w-96 p-2 mb-4 border-2 border-blue-500 rounded-full text-black">
+            <br>
+            <button type="submit" class="gradient-button w-96 p-2 rounded-full text-white font-bold mb-4">Predict</button>
+        </form>
+
+        <!-- Output Display -->
+        {% if showcase %}
+        <div class="w-96 p-2 border-2 border-blue-500 rounded-full text-black bg-white">
+            <p class="text-center text-black">{{ showcase }}</p>
+        </div>
+        {% endif %}
+    </div>
+
+    <!-- Navigation Links -->
+    <a href="{{ url_for('home') }}" class="absolute top-4 right-20 text-black-500">Home</a>
+    <a href="{{ url_for('predict') }}" class="absolute top-4 right-5 text-black-500">Predict</a>
+</body>
+</html>

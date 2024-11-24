@@ -1,0 +1,23 @@
+<html>
+<head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-cover bg-center" style="background-image: url('{{ url_for('static', filename='images/xyz.jpg') }}');">
+    <div class="bg-gray-200 bg-opacity-50 p-4 rounded-t-lg flex justify-end space-x-4">
+        <!-- Update these links to use url_for for dynamic routing -->
+        <a href="{{ url_for('home') }}" class="text-gray-700 hover:text-gray-900">Home</a>
+        <a href="{{ url_for('predict') }}" class="text-gray-700 hover:text-gray-900">Predict</a>
+    </div>
+    <div class="flex flex-col items-center justify-center h-screen text-center text-white px-4">
+        <h1 class="text-4xl font-bold mb-4">Crude Oil price Prediction</h1>
+        <p class="text-lg italic max-w-2xl">
+            Demand for oil is inelastic, therefore the rise in price is good news for producers because they will see an increase in their revenue. Oil importers, however, will experience increased costs of purchasing oil. Because oil is the largest traded commodity, the effects are quite significant. A rising oil price can even shift economic/political power from oil importers to oil exporters. The crude oil price movements are subject to diverse influencing factors.
+        </p>
+    </div>
+</body>
+</html>
